@@ -17,8 +17,13 @@
   </div>
   <div class="field">
     <%= f.label :body %><br>
-    <%= f.text_field :body %>
+    <%= f.text_area :body %>
   </div>
+  <div class="field">
+    <%= f.label :user, "Author" %><br>
+    <%= f.collection_select :user, User.all, :id, :name, include_blank: true %>
+  </div>
+  <br/>
   <div class="actions">
     <%= f.submit %>
   </div>
